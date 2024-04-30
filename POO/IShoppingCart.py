@@ -6,6 +6,9 @@ class IShoppingCart(metaclass=ABCMeta):
     def add(self):
         pass
 
+    @abstractmethod 
+    def edit(self):
+        pass
      
     @abstractmethod
     def remove(self):
@@ -14,3 +17,4 @@ class IShoppingCart(metaclass=ABCMeta):
     @abstractmethod
     def checkout(self):
         pass
+    
