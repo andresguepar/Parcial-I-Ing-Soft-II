@@ -1,21 +1,21 @@
 
-from poo.Payment import Payment
-from poo.PaymentService import PaymentService
-from poo.Product import Product
-from poo.ShoppingCart import ShoppingCart
-from poo.User import User
-from poo.UserService import UserService
+import Payment
+import PaymentService
+import Product
+import ShoppingCart
+import User
+import UserService
 
 
 def main():
-    shoppingCart = ShoppingCart()
-    userService = UserService()
-    paymentService = PaymentService()
+    shoppingCart = ShoppingCart.ShoppingCart()
+    userService = UserService.UserService()
+    paymentService = PaymentService.PaymentService()
     
 
     while True:
-        user = User("Pacho","78132","pacho@email.com")
-        product = Product("ProductoPredeterminado", 1)
+        user = User.User("Pacho","78132","pacho@email.com")
+        product = Product.Product("ProductoPredeterminado", 1)
         shoppingCart.add(product)
         userService.Add(user)
         print("\nOptions:")
@@ -48,7 +48,7 @@ def main():
             print(f"Your total price is: {shoppingCart.checkout(product)}")
 
         elif choice == '5':
-            payment = Payment(user,product,shoppingCart.checkout(product))
+            payment = Payment.Payment(user,product,shoppingCart.checkout(product))
             paymentService.pay(payment)
 
         elif choice == '6':

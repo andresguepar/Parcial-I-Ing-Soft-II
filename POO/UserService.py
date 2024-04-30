@@ -1,13 +1,11 @@
-
-
-from poo.User import User
+import User
 
 
 class UserService:
     def __init__(self):
         self.user = []
 
-    def edit(self, id: int,new_user: User):
+    def edit(self, id: int,new_user: User.User):
         self.user[id] = new_user
 
     def List(self):
